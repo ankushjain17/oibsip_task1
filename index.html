@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+    <html lang="en-US">
+    <meta charset="utf-8">
+    <link href="../styles/calculator.css" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<style>
+  * {
+  font-family: "Roboto", sans-serif;
+  font-size: 120%;
+  line-height: 5%;
+}
+
+p.input {
+  padding: 0 20px;
+  text-align: right;
+}
+
+p.log {
+  padding: 0 20px;
+  text-align: right;
+  color: rgb(51, 50, 51);
+  font-size: 50%;
+  font-style: italic;
+}
+
+div.calculatorContainer {
+  position: relative;
+  width: 470px;
+  height: 700px;
+  background-color: #000000;
+  background: linear-gradient(to bottom right, #000000, #505050);
+  border-radius: 35px;
+  margin: auto;
+  box-shadow: 3px 3px 35px #000000;
+}
+
+div.screen {
+  position: absolute;
+  width: 340px;
+  height: 90px;
+  background-color: #698B22;
+  border-radius: 20px;
+  margin-left: 65px;
+  margin-top: 65px;
+  box-shadow: inset 1px -1px 8px #000000;
+}
+
+div.buttons {
+  position: absolute;
+  width: 360px;
+  height: 470px;
+  margin-left: 55px;
+  margin-top: 170px;
+}
+
+button {
+  margin-left: 10px;
+  margin-top: 20px;
+  width: 72px;
+  height: 72px;
+  border: none;
+  border-radius: 35px;
+  color: #000000;
+  box-shadow: 3px 3px 35px #000000;
+  outline-style: none;
+}
+
+button.reset {
+  background-color: rgb(112, 5, 5);
+}
+
+button.equals {
+  background-color: #CD6839;
+}
+
+button.percentage {
+  background-color: #505050;
+}
+
+button.operator {
+  background-color: #505050;
+}
+
+button.number {
+  background-color: #C0C0C0;
+}
+
+button:hover {
+ background-color: rgb(51, 50, 51);
+ transition: 0.2s;
+ cursor: pointer;
+}
+
+button:active {
+  width: 67px;
+  height: 67px;
+  margin-left: 15px;
+  margin-bottom: -500px;
+  font-size: 110%;
+}
+
+</style>
+<body>
+    <div class="calculatorContainer">
+          <div class="screen">
+            <p class="log"></p>
+            <p class="input" maxlength="10"></p>
+          </div>
+
+          <div class="buttons">
+            <button class="reset" id="reset" onclick="getValue('C')">C</button>
+            <button class="operator" id="leftBracket" onclick="getValue('(')">(</button>
+            <button class="operator" id="rightBracket" onclick="getValue(')')">)</button>
+            <button class="operator" id="back" onclick="back('<')"><</button>
+            <button class="number" id="seven" onclick="getValue('7')">7</button>
+            <button class="number" id="eight" onclick="getValue('8')">8</button>
+            <button class="number" id="nine" onclick="getValue('9')">9</button>
+            <button class="operator" id="division" onclick="getValue('/')">/</button>
+            <button class="number" id="four" onclick="getValue('4')">4</button>
+            <button class="number" id="five" onclick="getValue('5')">5</button>
+            <button class="number" id="six" onclick="getValue('6')">6</button>
+            <button class="operator" id="multiplication" onclick="getValue('*')">*</button>
+            <button class="number" id="one" onclick="getValue('1')">1</button>
+            <button class="number" id="two" onclick="getValue('2')">2</button>
+            <button class="number" id="three" onclick="getValue('3')">3</button>
+            <button class="operator" id="subtraction" onclick="getValue('-')">-</button>
+            <button class="number" id="zero" onclick="getValue('0')">0</button>
+            <button class="number" id="point" onclick="getValue('.')">.</button>
+            <button class="equals" id="equals" onclick="result('')">=</button>
+            <button class="operator" id="addition" onclick="getValue('+')">+</button>
+          </div>
+    </div>
+</body>
+    <script type="text/javascript" src="calculator.js"></script>
+</html>
